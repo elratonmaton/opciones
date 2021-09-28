@@ -1,0 +1,159 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="{% static 'styles/base.css' %}">
+  {% block customheaders %}
+  {% endblock customheaders %}
+</head>
+<body>
+
+  <div class="menu">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img src="{% static 'images/opciones_logo.png' %}" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Nosotros</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Empresas
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                {% for company in companies %}
+                <li>
+                  <a class="dropdown-item" href="/company/{{company.slug}}">
+                    <span class="name">{{ company.name }}</span>
+                    <span class="heading">{{ company.heading }}</span>
+                  </a>
+                </li>
+                {% endfor %}
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contacto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Noticias</a>
+            </li>
+            <li class="nav-item">
+              <div class="social">
+                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-facebook-square"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  {% block content %}
+  {% endblock content %}
+
+  <div class="footer">
+    <div class="col-sm-12 subscribe">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 message">
+            <div class="image">
+              <img src="{% static 'images/email-icon.png' %}" alt="">
+            </div>
+            <div class="text">
+              <div class="text1">Mantente informado</div>
+              <div class="text2">Novedades exclusivas para ti.</div>
+            </div>
+    
+          </div>
+          <div class="col-sm-6">
+            <div class="form">
+              <form action="#">
+                <label>Correo electrónico</label>
+                <div class="input">
+                  <input type="email" placeholder="Correo electrónico">
+                  <div class="image">
+                    <img src="{% static 'images/arrow-white.png' %}" alt="">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row ml-0 mr-0 footer-links">
+      <div class="col-sm-4">
+        <div class="logo-footer">
+          <img src="{% static 'images/opciones_logo.png' %}" alt="">
+        </div>
+      </div>
+      <div class="col-sm-8">
+        <div class="row ml-0 mr-0">
+          <div class="col menu-footer">
+            <div class="menu-footer-title">nosotros</div>
+            <a href="/#aboutus" class="menu-footer-link">Historia</a>
+            <a href="/#aboutus" class="menu-footer-link">Quiénes somos</a>
+          </div>
+          <div class="col menu-footer">
+            <div class="menu-footer-title">Empresas</div>
+            {% for company in companies %}
+            <a class="menu-footer-link" href="/company/{{company.slug}}">
+              <span class="name">{{ company.name }}</span>
+              <span class="heading">{{ company.heading }}</span>
+            </a>
+            {% endfor %}
+          </div>
+          <div class="col menu-footer">
+            <div class="menu-footer-title">contacto</div>
+            <div class="address-item">
+              <div class="title">Dirección:</div>
+              <div class="description">Calle José Olaya S/N Alata Tiabaya<br>Arequipa - Perú</div>
+            </div>
+            <div class="address-item">
+              <div class="title">Correo:</div>
+              <div class="description">informacion@opcioneshg.com</div>
+            </div>
+            <div class="address-item">
+              <div class="title">Teléfonos:</div>
+              <div class="description">C: 965 965 119</div>
+              <div class="description">T: 054-439 246</div>
+            </div>
+          </div>
+          <div class="col"></div>
+          <div class="col"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-social-link">
+      <div class="social">
+        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-facebook-square"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="https://livejs.com/live.js"></script>
+  
+  {% block script %}
+  {% endblock script %}
+  
+</body>
+</html>

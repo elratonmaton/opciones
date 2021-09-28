@@ -1,0 +1,190 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block customheaders %}
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+  />
+  <link rel="stylesheet" href="{% static 'styles/company.css' %}">
+{% endblock customheaders %}
+
+{% block content %}
+<div class="slider">
+  <!-- Slider main container -->
+  <div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      {% for slide in sliders %}
+        <div class="swiper-slide" style="background: url({{ slide.image.url }});">
+          <div class="text-title">{{ slide.title }}</div>
+          <div class="text-subtitle">{{ slide.subtitle }}</div>
+        </div>
+      {% endfor %}
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+  </div>
+</div>
+
+<div class="block1">
+  <div class="container">
+    <div class="block-content">
+      <div class="block1-image">
+        {% if company.image_block_1 %}
+        <img src="{{company.image_block_1.url}}" alt="">
+        {% else %}
+          {% if company.block_1_video %}
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/-5u5RIgDvLc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          {% endif %}
+        {% endif %}
+      </div>
+      <div class="block1-text">
+        {% if company.description_title %}
+        <div class="text1">{{company.description_title}}</div>
+        {% endif %}
+        {% if company.description %}
+        <div class="text2">{{company.description}}</div>
+        {% endif %}
+      </div>
+      <div class="points">
+        <img src="{% static 'images/points-company.png' %}" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+
+{% if company.middle_message %}
+<div class="middle-block">
+  <div class="text">{{company.middle_message | safe}}</div>
+</div>
+{% endif %}
+
+{% if company.image_block_2 %}
+<div class="block2">
+  <div class="container">
+    <div class="block-content">
+      <div class="block2-image">
+        {% if company.image_block_2 %}
+        <img src="{{company.image_block_2.url}}" alt="">
+        {% endif %}
+      </div>
+      <div class="block2-text">
+        {% if company.description_title_block_2 %}
+        <div class="text1">{{company.description_title_block_2}}</div>
+        {% endif %}
+        {% if company.description_block_2 %}
+        <div class="text2">{{company.description_block_2}}</div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+
+{% if company.title_1_block_4 and company.title_2_block_4 and company.title_3_block_4 %}
+<div class="icons-container">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="icon-item">
+          <div class="icon">
+            <img src="{{ company.icon_1_block_4.url }}" alt="">
+          </div>
+          <div class="title">{{ company.title_1_block_4 }}</div>
+          <div class="description">{{ company.description_1_block_4 }}</div>
+        </div>
+      </div>
+  
+      <div class="col">
+        <div class="icon-item">
+          <div class="icon">
+            <img src="{{ company.icon_2_block_4.url }}" alt="">
+          </div>
+          <div class="title">{{ company.title_2_block_4 }}</div>
+          <div class="description">{{ company.description_2_block_4 }}</div>
+        </div>
+      </div>
+  
+      <div class="col">
+        <div class="icon-item">
+          <div class="icon">
+            <img src="{{ company.icon_3_block_4.url }}" alt="">
+          </div>
+          <div class="title">{{ company.title_3_block_4 }}</div>
+          <div class="description">{{ company.description_3_block_4 }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+
+{% if company.background_block_3 %}
+<div class="block3" style="background: url({{ company.background_block_3.url }});">
+  <div class="title">{{ company.title_block_3 }}</div>
+  <div class="container">
+    <div class="row">
+      <div class="col image-col">
+        <img src="{{ company.image_block_3.url }}" alt="">
+        <div class="company-logo">
+          <img src="{{ company.logo_company_block_3.url }}" alt="">
+        </div>
+      </div>
+      <div class="col text-col">
+        <div class="text1">{{ company.description_title_block_3 }}</div>
+        <div class="text2">{{ company.description_block_3 | safe }}</div>
+      </div>
+    </div>
+  </div>
+  {% if company.company_web_page_link and company.company_web_page_name %}
+  <div class="button-link-cont">
+    <a href="{{company.company_web_page_link}}" class="button-link">{{company.company_web_page_name}}</a>
+  </div>
+  {% endif %}
+</div>
+{% else %}
+  {% if company.company_web_page_link and company.company_web_page_name %}
+  <div class="button-link-cont">
+    <a href="{{company.company_web_page_link}}" class="button-link">{{company.company_web_page_name}}</a>
+  </div>
+  {% endif %}
+{% endif %}
+
+
+
+
+
+{% endblock content %}
+
+{% block script %}
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+  
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+    },
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+</script>
+{% endblock script %}

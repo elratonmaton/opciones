@@ -1,0 +1,178 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block customheaders %}
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+  />
+  <link rel="stylesheet" href="{% static 'styles/home.css' %}">
+{% endblock customheaders %}
+
+{% block content %}
+<div class="slider">
+  <!-- Slider main container -->
+  <div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      {% for slide in sliders %}
+        <div class="swiper-slide" style="background: url({{ slide.image.url }});">
+          <div class="text-title">{{ slide.title }}</div>          
+          <div class="text-subtitle">{{ slide.subtitle }}</div>          
+        </div>
+      {% endfor %}
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+  </div>
+</div>
+
+<div class="aboutus" id="aboutus">
+  <div class="container">
+    <div class="title">{{ about_us.title }}</div>
+    <div class="col-sm-12 mt-4">
+      <div class="row">
+        <div class="col-sm-3 text-right">
+          <div class="subtitle">{{ about_us.subtitle }}</div>
+        </div>
+        <div class="col-sm-9">
+          <p class="description-1">{{ about_us.description }}</p>
+          <p class="description-2">{{ about_us.description2 }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mision-vision">
+  <div class="container">
+    <div class="mision">
+      <div class="mision-card">
+        <div class="description">
+          <div class="title">Misión</div>
+          <p class="description1">{{ mision.description }}</p>
+          <p class="description2">{{ mision.description2 }}</p>
+          <div class="signature">
+            <img src="{{ mision.signature.url }}" alt="">
+          </div>
+        </div>
+
+        <div class="image-cont">
+          <img src="{{ mision.image.url }}" alt="">
+          <div class="signature">
+            <img src="{% static 'images/gassbot.png' %}" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="vision">
+      <div class="vision-card">
+        <div class="image-cont">
+          <img src="{{ vision.image.url }}" alt="">
+        </div>
+
+
+        <div class="description">
+          <div class="title">Visión</div>
+          <p class="description1">{{ vision.description }}</p>
+          <p class="description2">{{ vision.description2 }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="companies">
+  <div class="title">Empresas</div>
+  <div class="subtitle">Nuestras operaciones se extienden por todo el Perú.</div>
+  <div class="companies-cont row mr-0 ml-0">
+    {% for company in companies %}
+    <div class="col-sm-3 company-item">
+      <div class="image">
+        <img src="{{ company.home_logo.url }}" alt="">
+      </div>
+      <div class="title">{{ company.name }}</div>
+      <div class="subtitle">{{ company.heading }}</div>
+      {% if company.description %}
+      <div class="description">{{ company.description }}</div>
+      {% else %}
+        {% if company.description_title %}
+        <div class="description">{{ company.description_title }}</div>
+        {% endif %}
+      {% endif %}
+
+      <a href="/company/{{company.slug}}" class="more">
+        <span>{{company.home_link_more}}</span>
+        <img src="{% static 'images/arrow-green.png' %}" alt="">
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="banner-middle">
+  <div class="text">Especialistas en lo que necesitas.</div>
+</div>
+
+<div class="social-cont">
+  <div class="title">{{social.title}}</div>
+  <div class="container">
+    <div class="mision">
+      <div class="mision-card">
+        <div class="description">
+          <p class="description1">{{ social.block_1_description_title }}</p>
+          <p class="description2">{{ social.block_1_description }}</p>
+        </div>
+
+        <div class="image-cont">
+          <img src="{{ social.block_1_image.url }}" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="vision">
+      <div class="vision-card">
+        <div class="image-cont">
+          <img src="{{ social.block_2_image.url }}" alt="">
+        </div>
+
+
+        <div class="description">
+          <p class="description1">{{ social.block_2_description_title }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
+
+{% block script %}
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+  
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+    },
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+</script>
+{% endblock script %}

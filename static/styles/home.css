@@ -1,0 +1,377 @@
+.swiper {
+  width: 100%;
+  height: 85vh;
+}
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+.swiper-slide .text-title {
+  font-family: 'PublicSans-Bold';
+  color: #ffffff;
+  font-size: 4rem;
+  text-transform: uppercase;
+  line-height: 4rem;
+}
+.swiper-slide .text-subtitle {
+  font-family: 'PublicSans-Regular';
+  color: #ffffff;
+  font-size: 3rem;
+  line-height: 3rem;
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+.aboutus {
+  padding-top: 4rem;
+  padding-right: 4rem;
+  padding-left: 4rem;
+  padding-bottom: 6rem;
+  background: url('/static/images/about-us-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.aboutus .title {
+  text-align: center;
+  font-family: 'PublicSans-Bold';
+  color: #000000;
+  font-size: 2.5rem;
+}
+.aboutus .subtitle {
+  text-align: right;
+  font-family: 'PublicSans-ExtraBold';
+  color: #000000;
+  font-size: 1.75rem;
+  text-transform: uppercase;
+}
+.aboutus .description-1 {
+  font-family: 'PublicSans-Light';
+  color: #666666;
+  font-size: 1.25rem;
+}
+.aboutus .description-2 {
+  font-family: 'PublicSans-Regular';
+  color: #666666;
+  font-size: 1rem;
+  margin-top: 2rem;
+}
+
+.mision-vision {
+  background: #F4F4F4;
+}
+.mision-vision .mision {
+  padding-top: 4rem;
+}
+.mision-vision .mision .mision-card {
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+  width: 100%;
+}
+.mision-vision .mision .mision-card .description {
+  background: #FFFFFF;
+  width: 60%;
+  position: absolute;
+  top: 35%;
+  left: 0;
+  z-index: 9;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+}
+.mision-vision .mision .mision-card .description .title {
+  font-family: 'PublicSans-ExtraBold';
+  color: #000000;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+.mision-vision .mision .mision-card .description .description1 {
+  font-family: 'PublicSans-Light';
+  color: #666666;
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+}
+.mision-vision .mision .mision-card .description .description2 {
+  font-family: 'PublicSans-Regular';
+  color: #666666;
+  font-size: 1rem;
+  margin-top: 2rem;
+}
+.mision-vision .mision .mision-card .description .signature img {
+  width: 150px;
+}
+.mision-vision .mision .mision-card .image-cont {
+  width: 60%;
+  position: relative;
+}
+.mision-vision .mision .mision-card .image-cont img {
+  width: 100%;
+}
+.mision-vision .mision .mision-card .image-cont .signature {
+  position: absolute;
+  bottom: -55px;
+  right: -40px;
+}
+.mision-vision .mision .mision-card .image-cont .signature img {
+  width: 175px;
+}
+
+.mision-vision .vision {
+  padding-top: 4rem;
+  padding-bottom: 150px;
+  margin-top: 150px;
+}
+.mision-vision .vision .vision-card {
+  display: flex;
+  position: relative;
+  justify-content: flex-start;
+  width: 100%;
+}
+.mision-vision .vision .vision-card .image-cont {
+  width: 60%;
+  position: relative;
+}
+.mision-vision .vision .vision-card .image-cont img {
+  width: 100%;
+}
+.mision-vision .vision .vision-card .description {
+  background: #FFFFFF;
+  width: 60%;
+  position: absolute;
+  top: 35%;
+  left: 40%;
+  z-index: 9;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+}
+.mision-vision .vision .vision-card .description .title {
+  font-family: 'PublicSans-ExtraBold';
+  color: #000000;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+.mision-vision .vision .vision-card .description .description1 {
+  font-family: 'PublicSans-Light';
+  color: #666666;
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+}
+.mision-vision .vision .vision-card .description .description2 {
+  font-family: 'PublicSans-Regular';
+  color: #666666;
+  font-size: 1rem;
+  margin-top: 2rem;
+}
+
+
+.companies {
+  background: #F4F4F4;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  padding-top: 2rem;
+  padding-bottom: 150px;
+}
+.companies .title {
+  text-align: center;
+  font-family: 'PublicSans-Bold';
+  color: #000000;
+  font-size: 2.5rem;
+  margin-bottom: .5rem;
+}
+.companies .subtitle {
+  color: #666666;
+  font-family: 'PublicSans-Regular';
+  font-size: 1.15rem;
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 4rem;
+}
+.companies .companies-cont .company-item {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.companies .companies-cont .company-item .image {
+  text-align: center;
+  min-height: 100px;
+}
+.companies .companies-cont .company-item .image img {
+  width: 250px;
+}
+.companies .companies-cont .company-item .title {
+  text-align: left;
+  font-family: 'PublicSans-Bold';
+  color: #000000;
+  font-size: 1.75rem;
+  margin-top: 2rem;
+}
+.companies .companies-cont .company-item .subtitle {
+  color: #999999;
+  font-family: 'PublicSans-Regular';
+  font-size: 1.15rem;
+  text-align: left;
+  font-style: italic;
+  margin-bottom: 4rem;
+  text-transform: uppercase;
+}
+.companies .companies-cont .company-item .description {
+  color: #666666;
+  font-family: 'PublicSans-Regular';
+  font-size: 1rem;
+  min-height: 200px;
+  max-height: 200px;
+  overflow: hidden;
+}
+.companies .companies-cont .company-item .more {
+  font-family: 'PublicSans-Bold';
+  color: #000000;
+  text-decoration: none;
+  border-bottom: 2px solid #000000;
+  font-size: 1.15rem;
+}
+.companies .companies-cont .company-item .more span {
+  margin-right: 1rem;
+}
+.companies .companies-cont .company-item .more img {
+  width: 20px;
+}
+
+.banner-middle {
+  background: #ffffff;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 250px;
+}
+.banner-middle .text {
+  color: #999999;
+  font-family: 'PublicSans-Regular';
+  font-size: 2.25rem;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+.social-cont {
+  background: #F4F4F4;
+  padding-top: 6rem;
+}
+.social-cont .title {
+  text-align: center;
+  font-family: 'PublicSans-Bold';
+  color: #000000;
+  font-size: 2.5rem;
+}
+.social-cont .mision {
+  padding-top: 4rem;
+}
+.social-cont .mision .mision-card {
+  display: flex;
+  position: relative;
+  justify-content: flex-start;
+  width: 100%;
+}
+.social-cont .mision .mision-card .description {
+  background: #FFFFFF;
+  width: 60%;
+  position: absolute;
+  top: 45%;
+  left: 40%;
+  z-index: 9;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+}
+.social-cont .mision .mision-card .description .title {
+  font-family: 'PublicSans-ExtraBold';
+  color: #000000;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+.social-cont .mision .mision-card .description .description1 {
+  font-family: 'PublicSans-Light';
+  color: #666666;
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+}
+.social-cont .mision .mision-card .description .description2 {
+  font-family: 'PublicSans-Regular';
+  color: #666666;
+  font-size: 1rem;
+  margin-top: 2rem;
+}
+.social-cont .mision .mision-card .description .signature img {
+  width: 150px;
+}
+.social-cont .mision .mision-card .image-cont {
+  width: 60%;
+  position: relative;
+}
+.social-cont .mision .mision-card .image-cont img {
+  width: 100%;
+}
+.social-cont .mision .mision-card .image-cont .signature {
+  position: absolute;
+  bottom: -55px;
+  right: -40px;
+}
+.social-cont .mision .mision-card .image-cont .signature img {
+  width: 175px;
+}
+
+.social-cont .vision {
+  padding-top: 4rem;
+  padding-bottom: 150px;
+  margin-top: 150px;
+}
+.social-cont .vision .vision-card {
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+  width: 100%;
+}
+.social-cont .vision .vision-card .image-cont {
+  width: 60%;
+  position: relative;
+}
+.social-cont .vision .vision-card .image-cont img {
+  width: 100%;
+}
+.social-cont .vision .vision-card .description {
+  background: #FFFFFF;
+  width: 60%;
+  position: absolute;
+  top: 55%;
+  left: 0;
+  z-index: 9;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+}
+.social-cont .vision .vision-card .description .title {
+  font-family: 'PublicSans-ExtraBold';
+  color: #000000;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+.social-cont .vision .vision-card .description .description1 {
+  font-family: 'PublicSans-Light';
+  color: #666666;
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+}
+.social-cont .vision .vision-card .description .description2 {
+  font-family: 'PublicSans-Regular';
+  color: #666666;
+  font-size: 1rem;
+  margin-top: 2rem;
+}
